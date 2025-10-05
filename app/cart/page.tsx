@@ -104,7 +104,7 @@ export default function CartPage() {
               <h1 className="text-3xl font-bold mb-2">Your cart is empty</h1>
               <p className="text-muted-foreground">Looks like you haven't added any tickets yet.</p>
             </div>
-            <Button asChild>
+            <Button asChild className="bg-[#74B70E] hover:bg-[#00A750]">
               <Link href="/events">Browse Events</Link>
             </Button>
           </div>
