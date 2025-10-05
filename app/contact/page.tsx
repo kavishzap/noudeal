@@ -46,7 +46,7 @@ export default function ContactPage() {
                   </label>
                   <Textarea rows={5} placeholder="Write your message here..." />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-[#74B70E] hover:bg-[#00A750]">
                   Send Message
                 </Button>
               </form>

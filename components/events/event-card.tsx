@@ -96,7 +96,7 @@ export function EventCard({ event, variant = "default" }: EventCardProps) {
 
           <div className="flex items-center justify-between pt-2">
             <Link href={`/events/${event.slug}`} className="flex-1">
-              <Button className="w-full">Get Tickets</Button>
+              <Button className="w-full bg-[#74B70E] hover:bg-[#009272]">Get Tickets</Button>
             </Link>
           </div>
         </div>

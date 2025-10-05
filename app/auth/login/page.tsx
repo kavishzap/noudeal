@@ -1,42 +1,51 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Eye, EyeOff, Mail, Lock } from "lucide-react"
-import { useUserStore } from "@/store/user"
-import { Header } from "@/components/layout/header"
-import { Footer } from "@/components/layout/footer"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { useUserStore } from "@/store/user";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 export default function LoginPage() {
-  const router = useRouter()
-  const { login } = useUserStore()
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState("")
+  const router = useRouter();
+  const { login } = useUserStore();
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-  })
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError("")
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
 
     try {
       // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Mock login validation
-      if (formData.email === "user@example.com" && formData.password === "password") {
+      if (
+        formData.email === "user@example.com" &&
+        formData.password === "password"
+      ) {
         login({
           id: "1",
           email: formData.email,
@@ -49,17 +58,17 @@ export default function LoginPage() {
             smsNotifications: false,
             emailNotifications: true,
           },
-        })
-        router.push("/account")
+        });
+        router.push("/account");
       } else {
-        setError("Invalid email or password")
+        setError("Invalid email or password");
       }
     } catch (err) {
-      setError("Something went wrong. Please try again.")
+      setError("Something went wrong. Please try again.");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -70,7 +79,9 @@ export default function LoginPage() {
           <Card>
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Welcome back</CardTitle>
-              <CardDescription>Sign in to your account to continue</CardDescription>
+              <CardDescription>
+                Sign in to your account to continue
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -88,9 +99,11 @@ export default function LoginPage() {
                       id="email"
                       type="email"
                       placeholder="Enter your email"
-                      className="pl-10"
+                      className="pl-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -104,9 +117,11 @@ export default function LoginPage() {
                       id="password"
                       type={showPassword ? "text" : "password"}
                       placeholder="Enter your password"
-                      className="pl-10 pr-10"
+                      className="pl-10 pr-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
                       value={formData.password}
-                      onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, password: e.target.value })
+                      }
                       required
                     />
                     <Button
@@ -126,12 +141,19 @@ export default function LoginPage() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <Link href="/auth/forgot-password" className="text-sm text-primary hover:underline">
+                  <Link
+                    href="/auth/forgot-password"
+                    className="text-sm text-[#74B70E] hover:underline"
+                  >
                     Forgot password?
                   </Link>
                 </div>
 
-                <Button type="submit" className="w-full" disabled={isLoading}>
+                <Button
+                  type="submit"
+                  className="w-full bg-[#74B70E] hover:bg-[#00A750]"
+                  disabled={isLoading}
+                >
                   {isLoading ? "Signing in..." : "Sign in"}
                 </Button>
               </form>
@@ -139,7 +161,10 @@ export default function LoginPage() {
               <div className="mt-6 text-center">
                 <p className="text-sm text-muted-foreground">
                   Don't have an account?{" "}
-                  <Link href="/auth/register" className="text-primary hover:underline">
+                  <Link
+                    href="/auth/register"
+                    className="text-[#74B70E] hover:underline"
+                  >
                     Sign up
                   </Link>
                 </p>
@@ -157,5 +182,5 @@ export default function LoginPage() {
 
       <Footer />
     </div>
-  )
+  );
 }

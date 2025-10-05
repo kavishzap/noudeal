@@ -104,10 +104,11 @@ export default function RegisterPage() {
                       <Input
                         id="firstName"
                         placeholder="John"
-                        className="pl-10"
+                        className="pl-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]S"
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                         required
+                        
                       />
                     </div>
                   </div>
@@ -120,6 +121,7 @@ export default function RegisterPage() {
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       required
+                      className="focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
                     />
                   </div>
                 </div>
@@ -132,7 +134,7 @@ export default function RegisterPage() {
                       id="email"
                       type="email"
                       placeholder="john@example.com"
-                      className="pl-10"
+                      className="pl-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
@@ -147,7 +149,7 @@ export default function RegisterPage() {
                     <Input
                       id="phone"
                       placeholder="+230 5123 4567"
-                      className="pl-10"
+                      className="pl-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]S"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
@@ -163,7 +165,7 @@ export default function RegisterPage() {
                       id="password"
                       type={showPassword ? "text" : "password"}
                       placeholder="Create a password"
-                      className="pl-10 pr-10"
+                      className="pl-10 pr-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
                       value={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                       required
@@ -192,7 +194,7 @@ export default function RegisterPage() {
                       id="confirmPassword"
                       type={showConfirmPassword ? "text" : "password"}
                       placeholder="Confirm your password"
-                      className="pl-10 pr-10"
+                      className="pl-10 pr-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
                       value={formData.confirmPassword}
                       onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                       required
@@ -222,11 +224,11 @@ export default function RegisterPage() {
                     />
                     <Label htmlFor="agreeToTerms" className="text-sm">
                       I agree to the{" "}
-                      <Link href="/terms" className="text-primary hover:underline">
+                      <Link href="/terms" className="text-[#74B70E] hover:underline">
                         Terms of Service
                       </Link>{" "}
                       and{" "}
-                      <Link href="/privacy" className="text-primary hover:underline">
+                      <Link href="/privacy" className="text-[#74B70E] hover:underline">
                         Privacy Policy
                       </Link>
                     </Label>
@@ -244,7 +246,7 @@ export default function RegisterPage() {
                   </div>
                 </div>
 
-                <Button type="submit" className="w-full" disabled={isLoading}>
+                <Button type="submit" className="w-full bg-[#74B70E] hover:bg-[#00A750]" disabled={isLoading}>
                   {isLoading ? "Creating account..." : "Create account"}
                 </Button>
               </form>
@@ -252,7 +254,7 @@ export default function RegisterPage() {
               <div className="mt-6 text-center">
                 <p className="text-sm text-muted-foreground">
                   Already have an account?{" "}
-                  <Link href="/auth/login" className="text-primary hover:underline">
+                  <Link href="/auth/login" className="text-[#74B70E] hover:underline">
                     Sign in
                   </Link>
                 </p>

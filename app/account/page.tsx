@@ -198,7 +198,7 @@ export default function AccountPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Stat value={mockOrders.length} label="Total Orders" />
+                  <Stat value={mockOrders.length} label="Total Orders"/>
                   <Stat
                     value={mockOrders.reduce(
                       (sum, o) =>
@@ -452,7 +452,7 @@ function Info({ label, value }: { label: string; value: string }) {
 function Stat({ value, label }: { value: React.ReactNode; label: string }) {
   return (
     <div className="text-center p-4 bg-muted rounded-lg">
-      <div className="text-2xl font-bold text-primary">{value}</div>
+      <div className="text-2xl font-bold text-[#74B70E]">{value}</div>
       <div className="text-sm text-muted-foreground">{label}</div>
     </div>
   );

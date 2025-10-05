@@ -11,13 +11,28 @@ import { Badge } from "@/components/ui/badge";
 import { useCartStore } from "@/store/cart";
 
 const SearchIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+    />
   </svg>
 );
 
 const ShoppingCartIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -28,20 +43,50 @@ const ShoppingCartIcon = ({ className }: { className?: string }) => (
 );
 
 const UserIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+    />
   </svg>
 );
 
 const MenuIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M4 6h16M4 12h16M4 18h16"
+    />
   </svg>
 );
 
 const XIcon = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M6 18L18 6M6 6l12 12"
+    />
   </svg>
 );
 
@@ -67,33 +112,51 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">ND</span>
+            <div className="h-8 w-8 rounded-lg bg-[#74B70E] flex items-center justify-center">
+              <span className="text-white font-bold text-sm">ND</span>
             </div>
             <span className="font-bold text-xl">NouDeal</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="/"
+              className="text-sm font-medium hover:text-[#74B70E] transition-colors"
+            >
               Home
             </Link>
-            <Link href="/events" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="/events"
+              className="text-sm font-medium hover:text-[#74B70E] transition-colors"
+            >
               Events
             </Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="/contact"
+              className="text-sm font-medium hover:text-[#74B70E] transition-colors"
+            >
               Contact Us
             </Link>
-            <Link href="/terms" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="/terms"
+              className="text-sm font-medium hover:text-[#74B70E] transition-colors"
+            >
               Terms and Conditions
             </Link>
-            <Link href="/privacy" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="/privacy"
+              className="text-sm font-medium hover:text-[#74B70E] transition-colors"
+            >
               Privacy Policy
             </Link>
           </nav>
 
           {/* Search Bar */}
-          <form onSubmit={handleSearch} className="hidden md:flex items-center space-x-2 flex-1 max-w-md mx-6">
+          <form
+            onSubmit={handleSearch}
+            className="hidden md:flex items-center space-x-2 flex-1 max-w-md mx-6"
+          >
             <div className="relative flex-1">
               <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
@@ -101,7 +164,7 @@ export function Header() {
                 placeholder="Search events..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
+                className="pl-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
               />
             </div>
           </form>
@@ -109,7 +172,13 @@ export function Header() {
           {/* Right Actions */}
           <div className="flex items-center space-x-2">
             {/* Cart */}
-            <Button variant="ghost" size="sm" onClick={openCart} className="relative" aria-label="Open cart">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={openCart}
+              className="relative"
+              aria-label="Open cart"
+            >
               <ShoppingCartIcon className="h-5 w-5" />
               {cartItemCount > 0 && (
                 <Badge
@@ -136,7 +205,11 @@ export function Header() {
               onClick={() => setIsMobileMenuOpen((v) => !v)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+              {isMobileMenuOpen ? (
+                <XIcon className="h-5 w-5" />
+              ) : (
+                <MenuIcon className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -152,7 +225,7 @@ export function Header() {
                   placeholder="Search events..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
                 />
               </div>
             </form>

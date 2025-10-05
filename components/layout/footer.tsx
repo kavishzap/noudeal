@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand + Socials */}
           <div className="flex flex-col items-center gap-2">
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+              <div className="h-8 w-8 rounded-lg bg-[#74B70E] flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">
                   ND
                 </span>
@@ -19,13 +19,13 @@ export function Footer() {
             <div className="flex space-x-3">
               <Link
                 href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-[#74B70E] transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-[#74B70E] transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
@@ -36,19 +36,19 @@ export function Footer() {
           <div className="flex gap-6 text-xs sm:text-sm text-muted-foreground">
             <Link
               href="/contact"
-              className="hover:text-primary transition-colors"
+              className="hover:text-[#74B70E] transition-colors"
             >
               Contact Us
             </Link>
             <Link
               href="/terms"
-              className="hover:text-primary transition-colors"
+              className="hover:text-[#74B70E] transition-colors"
             >
               Terms of Service
             </Link>
             <Link
               href="/privacy"
-              className="hover:text-primary transition-colors"
+              className="hover:text-[#74B70E] transition-colors"
             >
               Privacy Policy
             </Link>

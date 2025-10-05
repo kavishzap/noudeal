@@ -128,7 +128,7 @@ export function EventFilters({ onFiltersChange }: EventFiltersProps) {
                 placeholder="Search events..."
                 value={filters.query}
                 onChange={(e) => updateFilter("query", e.target.value)}
-                className="pl-9"
+                className="pl-9  focus:ring-[#74B70E] focus:border-[#74B70E] focus-visible:ring-[#74B70E]"
               />
             </div>
           </div>
